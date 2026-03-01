@@ -1,0 +1,5 @@
+Python 3.x
+Streamlit
+Pandas
+NumPy
+Plotly Express
