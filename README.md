@@ -34,6 +34,7 @@ Se busca:
 
 ## 🧱 Estructura del Proyecto
 
+```
 advanced-bank-marketing-analytics-dashboard/
 │
 ├── app.py
@@ -41,6 +42,7 @@ advanced-bank-marketing-analytics-dashboard/
 ├── README.md
 ├── data/
 │   └── BankMarketing.csv
+```
 
 ---
 
