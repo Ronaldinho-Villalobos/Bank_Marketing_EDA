@@ -1,36 +1,36 @@
-# 🏦 advanced-bank-marketing-analytics-dashboard
-## 📊 Advanced Exploratory Data Analysis with Streamlit
+# 🏦 advanced-bank-marketing-analytics-dashboard  
+## 📊 Advanced Exploratory Data Analysis Dashboard with Streamlit  
 
 ---
 
 ## 📝 Descripción
 
-Aplicación analítica desarrollada con **Streamlit** que implementa un Análisis Exploratorio de Datos (EDA) completo y profesional sobre el dataset de campañas de marketing bancario.
+Aplicación analítica interactiva desarrollada con **Streamlit** que implementa un **Análisis Exploratorio de Datos (EDA) completo, estructurado y profesional** sobre el dataset Bank Marketing.
 
-Este proyecto no se enfoca en predicción, sino en **análisis estratégico para la toma de decisiones**, utilizando métricas estadísticas, comparación de grupos y visualizaciones dinámicas.
+El proyecto está orientado a **análisis estratégico y toma de decisiones comerciales**, no a modelos predictivos.
 
-Se aplican principios de:
+Se integra:
 
-- ✅ Python Fundamentals  
-- ✅ Análisis Exploratorio de Datos (EDA) estructurado  
+- ✅ Python aplicado a Data Analytics  
 - ✅ Programación Orientada a Objetos (POO)  
-- ✅ Visualización estadística con Matplotlib y Seaborn  
-- ✅ Dashboards interactivos con Streamlit  
-- ✅ Enfoque analítico orientado a negocio  
+- ✅ Análisis Exploratorio estructurado en 10 módulos  
+- ✅ Visualización estadística avanzada  
+- ✅ Dashboard interactivo profesional  
+- ✅ Segmentación dinámica con filtros  
 
 ---
 
 ## 🎯 Objetivo del Proyecto
 
-Identificar patrones y variables clave que influyen en la aceptación de campañas de marketing bancario.
+Analizar los factores que influyen en la aceptación de campañas de marketing bancario, identificando:
 
-El análisis busca:
+- Variables con mayor impacto en la conversión  
+- Diferencias entre grupos de clientes  
+- Patrones demográficos relevantes  
+- Influencia de variables económicas  
+- Oportunidades estratégicas de segmentación  
 
-- Comprender el comportamiento del cliente  
-- Detectar variables influyentes en la conversión  
-- Analizar diferencias entre grupos  
-- Evaluar impacto de variables demográficas y económicas  
-- Generar conclusiones estratégicas basadas en evidencia  
+El enfoque es **analítico–estratégico**, orientado a negocio.
 
 ---
 
@@ -48,65 +48,58 @@ advanced-bank-marketing-analytics-dashboard/
 
 ---
 
-## 🧠 Arquitectura del Sistema
+## 🧠 Arquitectura del Sistema (POO)
 
-El proyecto implementa **Programación Orientada a Objetos (POO)** para estructurar el análisis.
-
-Clase principal:
+El análisis está encapsulado dentro de una clase principal:
 
 ```python
 class DataAnalyzer:
 
     def clasificar_variables(self):
         """Identifica variables numéricas y categóricas"""
-        pass
 
     def estadisticas_descriptivas(self):
-        """Genera resumen estadístico (.describe())"""
-        pass
+        """Resumen estadístico general"""
 
     def mediana(self):
-        """Calcula mediana de variables numéricas"""
-        pass
+        """Mediana para variables numéricas"""
 
     def moda(self):
-        """Calcula moda cuando aplica"""
-        pass
+        """Valor más frecuente"""
 
     def valores_nulos(self):
         """Conteo de valores faltantes"""
-        pass
 
     def tasa_aceptacion(self):
-        """Calcula porcentaje de aceptación"""
-        pass
+        """Cálculo porcentual de aceptación"""
 
     def histograma(self, columna):
-        """Visualización de distribución con media y mediana"""
-        pass
+        """Distribución con KDE, media y mediana"""
 
     def boxplot(self, columna):
-        """Comparación numérica vs variable objetivo"""
-        pass
+        """Comparación numérica vs resultado campaña"""
 
     def grafico_categorico(self, columna):
-        """Frecuencias de variable categórica"""
-        pass
+        """Frecuencia de variable categórica"""
 ```
 
-La clase encapsula:
+### ✔️ Beneficios de la arquitectura
 
-- Clasificación de variables  
-- Estadísticas descriptivas  
-- Medidas de tendencia central (media, mediana, moda)  
-- Análisis de valores faltantes  
-- Visualizaciones estadísticas  
+- Código modular y limpio  
+- Fácil mantenimiento  
+- Escalable para futuras mejoras  
+- Separación entre lógica analítica y visualización  
 
 ---
 
 ## 📊 Funcionalidades del Dashboard
 
-### 🏠 1. Home
+El sistema está organizado en un menú lateral con navegación completa.
+
+---
+
+## 🏠 1. Home
+
 - Presentación del proyecto  
 - Objetivo del análisis  
 - Imagen representativa  
@@ -115,134 +108,150 @@ La clase encapsula:
 
 ---
 
-### 📂 2. Carga de Datos
+## 📂 2. Carga de Datos
+
 - Subida dinámica de archivo CSV  
+- Lectura con separador `;`  
+- Renombrado automático de variables técnicas:
+
+| Original | Nuevo nombre |
+|----------|-------------|
+| age | edad |
+| duration | duracion_llamada |
+| campaign | numero_contactos |
+| pdays | dias_desde_ultimo_contacto |
+| previous | contactos_previos |
+
+- Métricas de filas y columnas  
 - Vista previa del dataset  
-- Métricas generales (filas y columnas)  
-- Renombrado de variables técnicas a nombres más entendibles (ej: `age → edad`)  
+- Almacenamiento en `st.session_state` para persistencia  
 
 ---
 
-### 📊 3. Análisis Exploratorio Completo (EDA)
+## 📊 3. Análisis Exploratorio Completo (10 Tabs)
 
-El sistema implementa 10 módulos analíticos organizados en pestañas.
+El EDA está estructurado en 10 módulos analíticos:
 
 ---
 
 ### 1️⃣ Información General
-- `.info()` mostrado en panel expandible  
-- Tipos de datos organizados en tabla  
-- Conteo de valores nulos  
-- Visualización de faltantes  
+
 - Métricas generales del dataset  
+- Tipos de datos organizados en tabla  
+- Conteo total de valores nulos  
+- Visualización de faltantes  
+- `.info()` técnico en panel expandible  
 
 ---
 
-### 2️⃣ Clasificación de Variables
+### 2️⃣ Clasificación Automática
+
 - Identificación automática de:
   - Variables numéricas  
   - Variables categóricas  
-- Conteo de cada grupo  
-- Visualización clara y estructurada  
+- Conteo por tipo  
+- Listado detallado  
 
 ---
 
 ### 3️⃣ Estadísticas Descriptivas
+
+Incluye:
+
 - `.describe()` completo  
-- Media  
 - Mediana  
 - Moda  
-- Interpretación básica de dispersión y asimetría  
+- Comparación de tendencia central  
+- Análisis de dispersión  
 
 ---
 
 ### 4️⃣ Análisis de Valores Faltantes
+
 - Conteo por variable  
 - Visualización en gráfico de barras  
-- Discusión interpretativa  
+- Evaluación estructural del dataset  
 
 ---
 
 ### 5️⃣ Distribución de Variables Numéricas
-- Histogramas con curva KDE  
-- Línea de media y mediana  
-- Interpretación visual  
-- Detección de asimetrías  
+
+- Histogramas con KDE  
+- Línea de media (roja)  
+- Línea de mediana (verde)  
+- Detección visual de asimetrías  
 
 ---
 
-### 6️⃣ Análisis de Variables Categóricas
+### 6️⃣ Variables Categóricas
+
 - Conteo de frecuencias  
 - Gráficos de barras  
 - Proporciones porcentuales  
-- Interpretación comparativa  
+- Comparación de categorías  
 
 ---
 
-### 7️⃣ Análisis Bivariado (Numérico vs Categórico)
-Ejemplos:
-- Edad vs Aceptación  
-- Duración de llamada vs Aceptación  
+### 7️⃣ Numérico vs Resultado (y)
 
-Incluye:
 - Boxplots comparativos  
 - Comparación de medias por grupo  
 - Identificación de diferencias significativas  
 
 ---
 
-### 8️⃣ Análisis Bivariado (Categórico vs Categórico)
-Ejemplos:
-- Educación vs Aceptación  
-- Canal de contacto vs Aceptación  
+### 8️⃣ Categórico vs Resultado
 
-Incluye:
-- Tablas cruzadas normalizadas  
-- Comparación porcentual por grupo  
+- Tablas cruzadas normalizadas (%)  
+- Comparación proporcional por categoría  
+- Análisis de conversión segmentada  
 
 ---
 
-### 9️⃣ Análisis Dinámico
-Uso obligatorio de widgets:
+### 9️⃣ Análisis Dinámico Interactivo
 
-- `st.selectbox`  
-- `st.multiselect`  
-- `st.slider`  
-- `st.checkbox`  
-- `st.columns`  
-- `st.sidebar`  
-- `st.tabs`  
+Implementa widgets:
+
+- `st.slider`
+- `st.multiselect`
+- `st.selectbox`
+- `st.checkbox`
+- `st.columns`
+- `st.tabs`
+- `st.sidebar`
 
 Permite:
 
 - Filtrar por rango de edad  
-- Segmentar por tipo de trabajo  
-- Visualizar tasa de aceptación dinámica  
-- Mostrar matriz de correlación opcional  
+- Filtrar por tipo de trabajo  
+- Calcular tasa de aceptación dinámica  
+- Visualizar matriz de correlación opcional  
+- Análisis segmentado en tiempo real  
 
 ---
 
 ### 🔟 Hallazgos Clave
+
 - Tasa general de aceptación  
 - Visualización resumen  
-- Insights derivados del análisis  
-- Enfoque estratégico  
+- Métrica estratégica principal  
+- Insights finales ejecutivos  
 
 ---
 
 ## 📈 Variables Analizadas
 
-Incluye variables como:
-
 - Edad  
-- Tipo de Trabajo  
-- Estado Civil  
-- Nivel Educativo  
+- Tipo de trabajo  
+- Estado civil  
+- Educación  
 - Duración de la llamada  
 - Número de contactos  
+- Contactos previos  
 - Días desde último contacto  
-- Indicadores económicos  
+- Variables macroeconómicas  
 - Resultado de campaña anterior  
+- Variable objetivo `y`  
 
 ---
 
@@ -253,9 +262,11 @@ Incluye variables como:
 - Moda  
 - Distribución  
 - Comparación de grupos  
+- Análisis bivariado  
 - Proporciones  
 - Asimetría  
-- Relación entre variables  
+- Correlación  
+- Segmentación dinámica  
 
 ---
 
@@ -272,15 +283,9 @@ Incluye variables como:
 
 ## ⚙️ Instalación
 
-Clona el repositorio:
-
 ```bash
 git clone https://github.com/tuusuario/advanced-bank-marketing-analytics-dashboard.git
-```
-
-Instala dependencias:
-
-```bash
+cd advanced-bank-marketing-analytics-dashboard
 pip install -r requirements.txt
 ```
 
@@ -288,36 +293,34 @@ pip install -r requirements.txt
 
 ## ▶️ Ejecución
 
-Desde la carpeta del proyecto:
-
 ```bash
 streamlit run app.py
 ```
 
 ---
 
-## 📌 Resultados Estratégicos
+## 📌 Resultados Estratégicos Derivados
 
-El análisis permite concluir que:
+El análisis evidencia que:
 
 - La duración del contacto tiene fuerte relación con la conversión.
-- Existen diferencias significativas según perfil laboral.
+- Existen diferencias relevantes según perfil laboral.
 - El canal de contacto influye en la tasa de aceptación.
-- Determinados rangos etarios presentan mayor respuesta positiva.
-- Variables macroeconómicas muestran relación con el comportamiento del cliente.
-
-El proyecto está orientado a **mejorar la toma de decisiones comerciales**, no a generar modelos predictivos.
+- Determinados rangos etarios muestran mayor probabilidad de respuesta positiva.
+- Variables económicas impactan el comportamiento del cliente.
+- La segmentación mejora significativamente la interpretación estratégica.
 
 ---
 
 ## 🏆 Habilidades Demostradas
 
-- Estructuración profesional de EDA  
-- Diseño de dashboard interactivo  
-- Arquitectura basada en clases (POO)  
-- Interpretación estadística  
-- Visualización clara y ejecutiva  
-- Desarrollo orientado a negocio  
+- Arquitectura basada en POO  
+- Desarrollo de dashboards profesionales  
+- EDA estructurado de nivel avanzado  
+- Visualización ejecutiva  
+- Análisis orientado a negocio  
+- Manejo de estado en aplicaciones Streamlit  
+- Segmentación dinámica de datos  
 
 ---
 
@@ -325,5 +328,3 @@ El proyecto está orientado a **mejorar la toma de decisiones comerciales**, no 
 
 **Ronaldinho Agricio Villalobos Torres**  
 Especialización en Python & Data Analytics – 2026  
-
----
