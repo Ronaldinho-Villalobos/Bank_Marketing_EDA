@@ -1,6 +1,6 @@
 # 🏦 advanced-bank-marketing-analytics-dashboard  
 ## 📊 Advanced Exploratory Data Analysis Dashboard with Streamlit  
-
+<img width="1693" height="872" alt="home" src="https://github.com/user-attachments/assets/b0a963d5-3ee5-4c64-a94c-005b95ade306" />
 ---
 
 ## 📝 Descripción
