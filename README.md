@@ -110,6 +110,8 @@ El sistema está organizado en un menú lateral con navegación completa.
 
 ## 📂 2. Carga de Datos
 
+<img width="1877" height="837" alt="carga" src="https://github.com/user-attachments/assets/89732ba6-96b5-4122-9c12-a6dbc5af2975" />
+
 - Subida dinámica de archivo CSV  
 - Lectura con separador `;`  
 - Renombrado automático de variables técnicas:
@@ -135,6 +137,8 @@ El EDA está estructurado en 10 módulos analíticos:
 ---
 
 ### 1️⃣ Información General
+
+<img width="1840" height="847" alt="ana" src="https://github.com/user-attachments/assets/6b10e2df-f82e-4226-b844-5882f93e20d0" />
 
 - Métricas generales del dataset  
 - Tipos de datos organizados en tabla  
